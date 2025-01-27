@@ -1,0 +1,196 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.promo {
+    position: relative;
+    overflow: hidden;
+    height: 50px; 
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.promo .promo-item {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: slide 16s infinite;
+}
+
+.promo .promo-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.promo .promo-item:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.promo .promo-item:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.promo .promo-item:nth-child(4) {
+    animation-delay: 12s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+a {
+    color: black
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url('https://pics.craiyon.com/2023-11-06/15a37f489efc499fba8c7fddfdf120bf.webp') no-repeat center center/cover;
+    color: #000000;
+    text-align: center;
+}
+
+.banner_description {
+    justify-content: center;
+    text-align: center;
+}
+.banner_description h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.banner_description p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.banner_description button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: rgb(0, 0, 0);
+    color: #fffefe;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #bdbdbd;
+    color: #ffff;
+}
+
+.featured-products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured-products h2 {
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #d6d6d6;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
