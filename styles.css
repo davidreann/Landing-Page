@@ -35,6 +35,20 @@ nav ul li a {
     text-decoration: none;
 }
 
+header input[type="search"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 5px;
+}
+
 .promo {
     position: relative;
     overflow: hidden;
