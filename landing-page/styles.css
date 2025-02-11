@@ -88,7 +88,7 @@ header button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
     background: url('https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c9779878-0999-4ff7-8d6d-46e05bd37346/NIKE+WAFFLE+NAV.png') no-repeat center center/cover;
     color: #ffffff;
     text-align: center;
