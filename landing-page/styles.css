@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
 }
 
 header {
@@ -16,7 +17,14 @@ header {
     padding: 20px;
     background-color: #ffffff;
     color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+header .logo img {
+    height: 40;
 }
 
 nav ul {
@@ -33,6 +41,12 @@ nav ul li {
 nav ul li a {
     color: #000000;
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6e6e6e; 
 }
 
 header input[type="search"] {
@@ -67,6 +81,97 @@ header button {
     left: 0;
     opacity: 0;
     animation: slide 16s infinite;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: url('https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c9779878-0999-4ff7-8d6d-46e05bd37346/NIKE+WAFFLE+NAV.png') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #333;
+}
+
+.why-choose-nike {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.why-choose-nike h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit i {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.benefit h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: #555;
 }
 
 .promo .promo-item:nth-child(1) {
@@ -152,51 +257,130 @@ a {
 }
 
 .featured-products {
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .featured-products h2 {
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .product {
-    cursor: pointer;
-    margin-bottom: 2rem;
-
+    background-color: #fff;
     border: 1px solid #ddd;
-    padding: 15px;
+    border-radius: 8px;
+    padding: 20px;
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
-    transition: 0.3s all;
-
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
-.product:hover img {
-    opacity: 0.7;
+.product h3 {
+    font-size: 1.2rem;
+    margin: 15px 0;
 }
 
-.product .atb-btn {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: rgb(0, 0, 0);
+.product button {
+    padding: 10px 20px;
+    background-color: #000;
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.product:hover .atb-btn{
-    opacity: 0.7;
+.product button:hover {
+    background-color: #333;
+}
+
+.testimonials {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.newsletter {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.newsletter p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #ddd;
 }
 
 footer {
