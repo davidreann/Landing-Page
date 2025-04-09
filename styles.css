@@ -1,428 +1,179 @@
-html {
-    scroll-behavior: smooth;
+/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
 }
-
-body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
     box-sizing: border-box;
-    line-height: 1.6;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #ffffff;
-    color: #000000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .logo img {
-    height: 40;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #6e6e6e; 
-}
-
-header input[type="search"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-header button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    margin-left: 5px;
-}
-
-.promo {
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
     position: relative;
-    overflow: hidden;
-    height: 50px; 
-    background-color: #f5f5f5;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 50px;
-}
-
-.promo .promo-item {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: slide 16s infinite;
-}
-
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c9779878-0999-4ff7-8d6d-46e05bd37346/NIKE+WAFFLE+NAV.png') no-repeat center center/cover;
-    color: #ffffff;
-    text-align: center;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    margin: 0;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin: 20px 0;
-}
-
-.hero button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.hero button:hover {
-    background-color: #333;
-}
-
-.why-choose-nike {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.why-choose-nike h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.benefit {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.benefit i {
-    font-size: 2rem;
-    color: #000;
-    margin-bottom: 15px;
-}
-
-.benefit h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-.benefit p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.promo .promo-item:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.promo .promo-item:nth-child(2) {
-    animation-delay: 4s;
-}
-
-.promo .promo-item:nth-child(3) {
-    animation-delay: 8s;
-}
-
-.promo .promo-item:nth-child(4) {
-    animation-delay: 12s;
-}
-
-@keyframes slide {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    5% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    25% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    30% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-}
-
-a {
-    color: black
-}
-
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    background: url('https://pics.craiyon.com/2023-11-06/15a37f489efc499fba8c7fddfdf120bf.webp') no-repeat center center/cover;
-    color: #000000;
-    text-align: center;
-}
-
-.banner_description {
-    justify-content: center;
-    text-align: center;
-}
-.banner_description h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-.banner_description p {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-.banner_description button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: rgb(0, 0, 0);
-    color: #fffefe;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #bdbdbd;
-    color: #ffff;
-}
-
-.featured-products {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.featured-products h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.product {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.product img {
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+  }
+  img, video {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-}
-
-.product h3 {
-    font-size: 1.2rem;
-    margin: 15px 0;
-}
-
-.product button {
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.product button:hover {
-    background-color: #333;
-}
-
-.testimonials {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.testimonials h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.testimonial {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.newsletter {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-}
-
-.newsletter h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.newsletter p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.newsletter form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.newsletter input[type="email"] {
-    padding: 10px;
-    width: 300px;
-    border: none;
-    border-radius: 4px;
-}
-
-.newsletter button {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.newsletter button:hover {
-    background-color: #ddd;
-}
-
-footer {
-    background-color: #d6d6d6;
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-    background-color: #d6d6d6;
-    color: #000000;
-    list-style: none;
-    margin: 0;
-
-}
-footer a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .banner h1 {
-        font-size: 2rem;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
     }
-
-    .banner p {
-        font-size: 1rem;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
 }
-
-.item-details{
-    position: left;
-    right: 50px;
+@layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .block {
+    display: block;
+  }
 }
