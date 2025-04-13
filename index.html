@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/73bd006934.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="scripts.js"></script>
     <style>
+         html {
+            scroll-behavior: smooth;
+        }
         @keyframes slide {
             0% { opacity: 0; transform: translateY(100%); }
             5% { opacity: 1; transform: translateY(0); }
@@ -25,13 +28,13 @@
     <!-- Header -->
     <header class="flex justify-between items-center p-5 bg-white text-black">
         <div class="text-3xl font-bold">Nike</div>
-        <nav class="hidden md:block">
+        <nav>
             <ul class="flex items-center space-x-6">
                 <li>
                     <form action="search" method="get" class="relative">
                         <input type="search" placeholder="Search..." aria-label="Search" 
-                               class="py-1 px-3 pr-8 rounded border border-gray-300">
-                        <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                               class="py-1 px-3 pr-8 rounded border border-gray-300 text-sm">
+                        <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
@@ -42,13 +45,6 @@
                 <li><a href="#" class="hover:text-gray-700"><i class="fa-solid fa-list"></i></a></li>
             </ul>
         </nav>
-        <button class="md:hidden">
-            <div class="menu-icon flex flex-col w-8">
-                <div class="line h-1 w-full bg-black my-1 transition-all duration-300"></div>
-                <div class="line h-1 w-full bg-black my-1 transition-all duration-300"></div>
-                <div class="line h-1 w-full bg-black my-1 transition-all duration-300"></div>
-            </div>
-        </button>
     </header>
 
     <!-- Promo Banner -->
@@ -73,9 +69,11 @@
         <div class="relative z-10 hero-content">
           <h1 class="text-5xl m-0">Just Do It.</h1>
           <p class="text-2xl my-2.5 mx-0">Discover the latest styles and innovations from Nike.</p>
-          <button class="py-2.5 px-5 text-base bg-black text-white font-bold border-none cursor-pointer hover:bg-gray-700">
-            Shop Now
-          </button>
+          <button 
+  onclick="scrollToFeatured()"
+  class="py-2.5 px-5 text-base bg-black text-white font-bold border-none cursor-pointer hover:bg-gray-700 transition-colors duration-300">
+  Shop Now
+</button>
         </div>
       </section>
       
@@ -103,7 +101,7 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="featured-products py-10 px-5 text-center">
+    <section id="featured" class="featured-products py-10 px-5 text-center">
         <h2 class="text-3xl mb-5">Featured Products</h2>
         <div class="product-grid grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div class="product cursor-pointer mb-8 border border-gray-300 p-4 text-center hover:shadow-lg">
@@ -164,7 +162,7 @@
         <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for the latest updates and exclusive offers.</p>
         <form class="max-w-md mx-auto flex">
             <input type="email" placeholder="Enter your email" required 
-                   class="flex-grow py-3 px-4 rounded-l text-black">
+                   class="flex-grow py-3 px-4 rounded-l text-white">
             <button type="submit" class="bg-white-600 hover:bg-red-700 py-3 px-6 rounded-r font-semibold">
                 Subscribe
             </button>
